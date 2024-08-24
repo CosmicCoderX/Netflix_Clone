@@ -8,6 +8,7 @@
 
 body {
     background-color: black;
+    overflow-x: hidden;
 }
 
 .main {
@@ -213,22 +214,51 @@ section.first > div{
     filter: invert(1);
 }
 
-.faqbox:hover{
+.ques:hover{
     background-color: #414141;
     color: white;
 }
 
+.ans{
+    max-height: 0px;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faqbox.active .ans{
+    max-height: 300px;
+}
+
+
 .faqbox{
-    transition: all 1s ease-out;
+    min-height: 14vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #2d2d2d;
+    margin: 24px auto;
+}
+
+.ques{
+    background-color: #2d2d2d;
+    width: 60vw;
+    padding: 30px;
     font-size: 24px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: #2d2d2d;
-    padding: 24px;
-    max-width: 60vw;
-    margin: 24px auto;
     cursor: pointer;
+    transition: all 0.3s ease-out;
+}
 
+.ans p{
+    background-color: #2d2d2d;
+    padding: 30px;
+    font-size: 24px;
+    border-top: 1px solid #000;
 }
 
 .faq-text{
